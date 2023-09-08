@@ -1,16 +1,16 @@
-
 import 'package:flutter/material.dart';
-import 'package:multi_role_base_app/login_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+
+import 'login_screen.dart';
+class StudentScreen extends StatefulWidget {
+  const StudentScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<StudentScreen> createState() => _StudentScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  String email = " ", age = " ";
+class _StudentScreenState extends State<StudentScreen> {
+  String email = " ", age = " ",type = ' ';
 
   @override
   void initState() {
@@ -21,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     SharedPreferences sp = await SharedPreferences.getInstance();
     email = sp.getString("email") ?? "";
     age = sp.getString("age") ?? "";
+    type = sp.getString("userType") ?? " ";
     setState(() {
 
     });
@@ -30,13 +31,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        title: Text("Student"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(child: Text("This is Home Screen",style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),)),
+          Center(child: Text("This is Student Screen",style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),)),
           SizedBox(height: 30,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
