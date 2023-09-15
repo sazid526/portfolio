@@ -1,5 +1,6 @@
 import 'package:covid_tracker_app/View/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:covid_tracker_app/Model/worldStatesModel.dart';
 
 void main(){
   runApp(const MyApp());
