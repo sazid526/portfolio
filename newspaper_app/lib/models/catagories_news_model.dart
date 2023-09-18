@@ -1,11 +1,11 @@
-class CatagoriesNewsModel {
+class CategoriesNewsModels {
   String? status;
   int? totalResults;
   List<Articles>? articles;
 
-  CatagoriesNewsModel({this.status, this.totalResults, this.articles});
+  CategoriesNewsModels({this.status, this.totalResults, this.articles});
 
-  CatagoriesNewsModel.fromJson(Map<String, dynamic> json) {
+  CategoriesNewsModels.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     totalResults = json['totalResults'];
     if (json['articles'] != null) {
